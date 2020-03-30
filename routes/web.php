@@ -33,7 +33,7 @@ Route::post('login/regins','Index\LoginController@regins');
 
 //books  書記控制器
 Route::get('books/suo','Index\BooksController@suo');
-
+Route::get('books/yue','Index\BooksController@yue');
 
 
 

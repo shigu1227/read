@@ -11,9 +11,9 @@
     <h3>作者名：{{$data->books_man}}</h3>
     <h3>上传时间：{{date('Y-m-d H:i:s',$data->books_time)}}</h3>
     <h3>类型：{{$data->books_cate}}</h3>
-    <form action="{{url('books/yue')}}" method="post">
+    <form action="{{url('books/yue')}}" method="get">
         @csrf
-        <input type="hidden" value="1" name="books_yue">
+        <input type="hidden" value="{{$data->books_id}}" name="books_yue">
         <input type="submit" value="点击投票月票">
     </form>
 </body>

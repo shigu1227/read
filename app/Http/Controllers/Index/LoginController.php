@@ -24,18 +24,18 @@ class LoginController extends Controller
         ];
        
         if($str!=$yan){
-            echo '您的验证码不正确,正在为您跳转。。。';
+            echo '您的验证码不正确,正在为您跳转请稍等！！';
             header("refresh:2,url='/login/reg'");
             die;
         }
         if($pwd!=$pwds){
-            echo '您的两次密码不一致,正在为您跳转。。。';
+            echo '您的两次密码不一致,正在为您跳转请稍等！！';
             header("refresh:2,url='/login/reg'");
             die;
         }
         $res=User::insert($arr);
         if($res){
-            echo '注册成功,正在为您跳转。。。';
+            echo '注册成功,正在为您跳转请稍等！！';
             header("refresh:2,url='/index/login'");
         }
        

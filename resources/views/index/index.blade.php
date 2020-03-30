@@ -73,9 +73,9 @@
                     <div class="searchClass" id="searchClass">
                         <select name="books_cate" >
                              <option value="">全部</option>
-                             <option value="2">小说</option>
-                             <option value="3">原创</option>
-                             <option value="1">图书</option>
+                             <option value="4">武侠</option>
+                             <option value="5">玄幻</option>
+                             <option value="6">奇幻</option>
                          </select>
 
                     </div>
@@ -286,7 +286,7 @@
                     @foreach ($yue as $v)
                     <li class="firstList">
                         <div class="hoverHide">
-                            <em>14024</em>
+                            <em>{{$v->books_yue}}</em>
                             <span class="num3">@php
                                     echo $i;
                                 @endphp</span>
