@@ -35,5 +35,8 @@ Route::post('login/regins','Index\LoginController@regins');
 Route::get('books/suo','Index\BooksController@suo');
 Route::get('books/yue','Index\BooksController@yue');
 
+Route::get('books/alipay','Index\BooksController@alipay');
+Route::get('books/return','Index\BooksController@return');
+Route::post('books/notify','Index\BooksController@notify');
 
 

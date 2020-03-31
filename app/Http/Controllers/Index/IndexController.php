@@ -36,6 +36,7 @@ class IndexController extends Controller
             die;
         }else{
             if($data->user_pwd==$pwd){
+                session(['name'=>$name]);
                 echo '登录成功,正在为您跳转请稍等！！';
                 header("refresh:2,url='/'");
                 die;
@@ -67,7 +68,7 @@ class IndexController extends Controller
       include($url);
       $obj = new QRcode();
       $uid=uniqid();
-      $url_s="http://read.bianaoao.top/imag?uid=".$uid;
+      $url_s="http://le.80098.top/imag?uid=".$uid;
       $obj->png($url_s,storage_path('app/public/1.png'));
       return $uid; 
     }
@@ -75,15 +76,15 @@ class IndexController extends Controller
 
     public function imag(){
         $uid=$_GET['uid'];
-        $appid='wxb48cca98c04caf2a';
-        $uri=urlencode("http://read.bianaoao.top/login");
+        $appid='wxc090c2e5cc0b0c2a';
+        $uri=urlencode("http://le.80098.top/login");
         $url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=$appid&redirect_uri=$uri&response_type=code&scope=snsapi_userinfo&state=$uid#wechat_re";
         header('Location:'.$url);
     }
     public function login(){
         $code=$_GET['code'];
-        $appid='wxb48cca98c04caf2a';
-        $se='57b0c72a414a0152ac64b3378a8ef2e0';
+        $appid='wxc090c2e5cc0b0c2a';
+        $se='f2d527f6f3da798c1edf6d3449ee63d8';
         $url='https://api.weixin.qq.com/sns/oauth2/access_token?appid='.$appid.'&secret='.$se.'&code='.$code.'&grant_type=authorization_code';
         $get=file_get_contents($url);
         $arr=json_decode($get,true);
